@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 19</title>
+    <style>
+        body{
+            text-align: center;
+            background-color: skyblue;
+        }
+        h1{
+            color: red;
+            font-family: cursive;
+        }
+        button{
+            padding: 10px;
+            color: red;
+            background-color: lightgreen;
+        }
+        label{
+            color: darkblue;
+            font-family: cursive;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reversing the Number</h1>
+    <label>Enter the Number:</label>
+    <input type="number" id="input" placeholder="Enter the Number" name="num"><br><br>
+    <button onclick="reverseNumber()">Reverse</button><br><br>
+    <label>Expected Output:</label>
+    <input type="text" id="output" name="output"><br><br>
+    <script>
+        function reverseNumber(){
+            var rev = document.getElementById("input");
+            var kal = rev.value;
+            var vas = kal.toString().split("").reverse().join("");
+            var sur = document.getElementById("output");
+            sur.value = vas;
+            }
+        </script>
+</body>
+</html>

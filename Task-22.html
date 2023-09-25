@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 22</title>
+    <style>
+        body{
+            text-align: center;
+            background: linear-gradient(to right, orange,white,green);
+        }
+        h1{
+            color: blue;
+            font-size: 50px;
+        }
+        button{
+            padding: 10px;
+            color: blue;
+            background-color: lightblue;
+        }
+        label{
+            color: darkblue;
+            font-family: cursive;
+        }
+        p{
+            color: blue;
+            font-size: x-large;
+            font-family: cursive;
+        }
+    </style>
+</head>
+<body>
+    <h1>Date and Time</h1><br><br>
+    <button onclick="showDate()">Show Date</button><br><br>
+    <p id="display"></p><br><br>
+    <button onclick="showTime()">Show Time</button><br><br>
+    <p id="show"></p><br><br>
+    <script>
+        function showDate(){
+            var currentDate = new Date();
+            var day = currentDate.getDate();
+            var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            var month = monthNames[currentDate.getMonth()+1];
+            var year = currentDate.getFullYear();
+            var resDate = day + '/' + month + '/' + year;
+            document.getElementById('display').innerHTML = resDate;
+        }
+        function showTime(){
+            var currentDate = new Date();
+            var weekNames = ["Mon","Tue","Wed","Thur","Fri","Sat"];
+            var week = weekNames[currentDate.getDay()];
+            var monthNames = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+            var month = monthNames[currentDate.getMonth()+1];
+            var day = currentDate.getDate();
+            var year = currentDate.getFullYear();
+            var hours = currentDate.getHours();
+            var minutes = currentDate.getMinutes();
+            var seconds = currentDate.getSeconds();
+            var resTime = week + ' ' + month + ' ' + day + ' ' + year + ' ' + hours + ':' + minutes + ':' + seconds + ' GMT+0530(India Standard Time)' ;
+            document.getElementById('show').innerHTML = resTime
+        }
+    </script>
+</body>
+</html>
